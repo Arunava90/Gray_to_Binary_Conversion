@@ -1,0 +1,11 @@
+module gray_to_bin #(parameter DATA_WIDTH=8) (
+    input  [DATA_WIDTH-1:0] i_gray,
+    output [DATA_WIDTH-1:0] o_bin
+    );
+    
+    genvar i;
+    for (i=0; i<DATA_WIDTH; i=i+1) begin
+        assign o_bin[i] = ^(i_gray>>i);
+    end
+    
+endmodule
